@@ -6,6 +6,7 @@ from FriAM_CodingSkills import Kadai02 as Poker
 
 
 if __name__ == "__main__":
-    data = Poker.initialize(False)
+    joker_flag = False
+    data, joker_flag = Poker.initialize(joker_flag)
     name = Poker.judge(data)
     Poker.result(data, name)

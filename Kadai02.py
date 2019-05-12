@@ -26,7 +26,7 @@ def initialize(jf):
                     var = dt[i][0]
                     dt[i][0] = (var + 1) % 4
 
-    return dt
+    return dt, jf
 
 
 def convert(card):
