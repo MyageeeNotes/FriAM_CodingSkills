@@ -82,12 +82,27 @@ def is_stairs(num_data):
 
     sorted_list = sorted(num_data)
     parent = sorted_list[0]
+    print(sorted_list, parent)
     if parent == 1:
-        for i in range(sorted_list[-1] - 9):
-            sorted_list[i] += 13
+        if sorted_list[-1] == 13:
+            for i in range(len(sorted_list)):
+                if sorted_list[i] < 10:
+                    sorted_list[i] += 13
+        if sorted_list[-1] == 12 and joker:
+            for i in range(len(sorted_list)):
+                if sorted_list[i] < 10:
+                    sorted_list[i] += 13
         sorted_list = sorted(sorted_list)
         parent = sorted_list[0]
     distance = [s - parent for s in sorted_list]
+
+    # [x, 10, 11, 12, 13]
+    # [x,  2, 11, 12, 13]
+    # [x,  2,  3, 12, 13]
+    # [x,  2,  3,  4, 13]
+    # [1,  2,  3,  4,  5]
+
+    print(distance)
 
     if distance == [0, 1, 2, 3, 4]:
         if parent == 10:
@@ -101,7 +116,7 @@ def is_stairs(num_data):
             if i in distance:
                 dist_cnt += 1
         if dist_cnt == 4:
-            if parent == 10 or parent == 11:
+            if parent == 10:
                 return True, 1
             else:
                 return True, 0
@@ -174,6 +189,8 @@ def judge(dt):
             # Royal Straight Flash
             if stairs_judge[1] == 1:
                 if same_suit:
+                    return nm[9]
+                if joker:
                     return nm[9]
                 return nm[6]
             else:

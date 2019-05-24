@@ -1,25 +1,25 @@
 # coding: utf-8
 # Coding Skills: Kadai02-5
-# 345(29) Daigo Miyajima
+# 345(29)
 
-# -*- coding:utf-8 -*-
 import pygame
 from pygame.locals import *
 import sys
 import os
 import time
 from FriAM_CodingSkills import Kadai02 as Poker
-screen = None
-se = None
 
 
 class Table:
+    # Initialize
     def __init__(self, scr):
-        self.you = []
-        self.cpu = []
+        self.you = []       # Your Cards [suit, number] x5
+        self.cpu = []       # CPU Cards
         self.screen = scr
-        self.you_nm_img = ''
-        self.cpu_nm_img = ''
+        self.you_nm_img = ''    # Your Hand image
+        self.cpu_nm_img = ''    # CPU Hand image
+        self.you_deal = 0   # Finish dealing cards for animation
+        self.cpu_deal = 0   # Finish dealing cards for animation
 
     def load_nm_img(self, turn, pt):
         if turn == 0:
@@ -45,13 +45,16 @@ class Table:
 
         dt.display()
 
-        self.you_deal = 0
-        self.cpu_deal = 0
+        you_deal = 0
+        cpu_deal = 0
         for i in range(5):
             if self.you[i].pos_set:
-                self.you_deal += 1
+                you_deal += 1
             if self.cpu[i].pos_set:
-                self.cpu_deal += 1
+                cpu_deal += 1
+
+        self.you_deal = you_deal
+        self.cpu_deal = cpu_deal
 
         if self.you_deal == 5:
             if self.cpu_deal == 5:
@@ -184,17 +187,17 @@ def card_set(tb, scr, yp, cp):
         cnt += 1
         if cnt == 15000:
             pygame.mixer.music.fadeout(1000)
-            title_screen()
-        # イベント処理
+            title_screen(scr)
+
         for event in pygame.event.get():
-            if event.type == QUIT:  # 閉じるボタンが押されたら終了
-                pygame.quit()  # Pygameの終了(画面閉じられる)
+            if event.type == QUIT:
+                pygame.quit()
                 sys.exit()
             if event.type == KEYDOWN:
                 if event.key == K_RETURN:
                     se.play()
                     pygame.mixer.music.fadeout(1000)
-                    title_screen()
+                    title_screen(scr)
 
 
 def play_screen(scr):
@@ -215,6 +218,11 @@ def play_screen(scr):
 
     # Create YOUR data -----
     your_data, joker_flag = Poker.initialize(joker_flag)
+    """
+    your_data, joker_flag = [
+        [3, 10], [3, 11], [3, 12], [3, 13], [4, 14]
+    ], False
+    """
     your_name = Poker.judge(your_data)
     your_point = Poker.battle(your_name)
     for cnt in range(len(your_data)):
@@ -239,26 +247,27 @@ def play_screen(scr):
                     se.play()
                     your_point = card_reset(table, screen)
                 if event.key == K_RETURN:
-                    se.play()
-                    card_set(table, screen, your_point, cpu_point)
+                    if table.you_deal == 5:
+                        se.play()
+                        card_set(table, screen, your_point, cpu_point)
 
 
-def title_screen():
+def title_screen(scr):
     pygame.mixer.music.load("./Kadai02/249_NightCity.mp3")
     pygame.mixer.music.play(-1)
     while True:
-        screen.fill((0, 0, 0))        # 画面を黒色(#000000)に塗りつぶし
-        screen.blit(bgImage, (0, 0))
-        pygame.display.update()     # 画面を更新
+        scr.fill((0, 0, 0))
+        scr.blit(bgImage, (0, 0))
+        pygame.display.update()
         # イベント処理
         for event in pygame.event.get():
-            if event.type == QUIT:  # 閉じるボタンが押されたら終了
-                pygame.quit()       # Pygameの終了(画面閉じられる)
+            if event.type == QUIT:
+                pygame.quit()
                 sys.exit()
             if event.type == KEYDOWN:
                 pygame.mixer.music.stop()
                 se.play()
-                play_screen(screen)
+                play_screen(scr)
 
 
 if __name__ == "__main__":
@@ -276,4 +285,4 @@ if __name__ == "__main__":
     se_deals = pygame.mixer.Sound("./Kadai02/deal5.wav")
 
     # MAIN LOOP -----
-    title_screen()
+    title_screen(screen)
