@@ -10,26 +10,31 @@ import time
 from FriAM_CodingSkills import Kadai02 as Poker
 
 
+# ------------------------------
+# Dealing cards information.
+#
+# ------------------------------
 class Table:
     # Initialize
     def __init__(self, scr):
+        self.screen = scr
         self.you = []       # Your Cards [suit, number] x5
         self.cpu = []       # CPU Cards
-        self.screen = scr
         self.you_nm_img = ''    # Your Hand image
         self.cpu_nm_img = ''    # CPU Hand image
         self.you_deal = 0   # Finish dealing cards for animation
         self.cpu_deal = 0   # Finish dealing cards for animation
+        self.your_data = []
+        self.cpu_data = []
 
     def load_nm_img(self, turn, pt):
+        p = os.path.join('Kadai02', 'Name', str(pt) + '.png')
         if turn == 0:
-            path = os.path.join('Kadai02', 'Name', str(pt) + '.png')
-            self.you_nm_img = pygame.image.load(path)
+            self.you_nm_img = pygame.image.load(p)
             self.you_nm_img = pygame.transform.scale(
                 self.you_nm_img, (1500, 500))
         else:
-            path = os.path.join('Kadai02', 'Name', str(pt) + '.png')
-            self.cpu_nm_img = pygame.image.load(path)
+            self.cpu_nm_img = pygame.image.load(p)
             self.cpu_nm_img = pygame.transform.scale(
                 self.cpu_nm_img, (900, 300))
 
@@ -148,16 +153,50 @@ class Card:
             self.screen.blit(self.bg_img, self.pos_now)
 
 
-def card_reset(tb, scr):
+def card_all_reset(tb, scr, cpk, jf):
     # Create YOUR data -----
-    se_deals.play()
-    your_data, joker_flag = Poker.initialize(True)
+    se_deals5.play()
+    your_data = Poker.initialize(cpk)
     your_name = Poker.judge(your_data)
     your_point = Poker.battle(your_name)
     for cnt in range(len(your_data)):
         tb.you[cnt] = Card(0, scr, your_data[cnt], cnt)
 
-    return your_point
+    if len(cpk.cards) < 5:
+        package = Poker.CardPack(jf)
+
+        for i in range(5):
+            yd = tb.you[i]
+            cd = tb.cpu[i]
+            package.cards.remove([yd.suit, yd.num])
+            package.cards.remove([cd.suit, cd.num])
+
+        return your_point, package
+
+    return your_point, cpk
+
+
+def card_reset(pos, tb, scr, cpk, jf):
+    # Create YOUR data -----
+    se_deals1.play()
+    tb.your_data[pos] = Poker.draw_card(cpk)
+    your_name = Poker.judge(tb.your_data)
+    your_point = Poker.battle(your_name)
+    tb.you[pos] = Card(0, scr, tb.your_data[pos], pos)
+    tb.you[pos].flip = True
+
+    if len(cpk.cards) < 5:
+        package = Poker.CardPack(jf)
+
+        for i in range(5):
+            yd = tb.you[i]
+            cd = tb.cpu[i]
+            package.cards.remove([yd.suit, yd.num])
+            package.cards.remove([cd.suit, cd.num])
+
+        return your_point, package
+
+    return your_point, cpk
 
 
 def card_set(tb, scr, yp, cp):
@@ -185,7 +224,7 @@ def card_set(tb, scr, yp, cp):
     while True:
         pygame.display.update()
         cnt += 1
-        if cnt == 15000:
+        if cnt == 14000:
             pygame.mixer.music.fadeout(1000)
             title_screen(scr)
 
@@ -201,55 +240,57 @@ def card_set(tb, scr, yp, cp):
 
 
 def play_screen(scr):
-    scr.fill((0, 0, 0))  # 画面を黒色(#000000)に塗りつぶし
+    scr.fill((0, 0, 0))
     table = Table(scr)
     time.sleep(1)
-    pygame.mixer.music.load("./Kadai02/254-Through.mp3")
+    pygame.mixer.music.load("./Kadai02/Poker_battle_bgm.mp3")
     pygame.mixer.music.play(-1)
 
     # Create CPU data -----
     joker_flag = True
-    cpu_data, joker_flag = Poker.initialize(joker_flag)
-    cpu_name = Poker.judge(cpu_data)
+    card_pack = Poker.CardPack(joker_flag)
+
+    table.cpu_data = Poker.initialize(card_pack)
+    cpu_name = Poker.judge(table.cpu_data)
     cpu_point = Poker.battle(cpu_name)
-    for cnt in range(len(cpu_data)):
-        card = Card(1, scr, cpu_data[cnt], cnt)
+    for cnt in range(len(table.cpu_data)):
+        card = Card(1, scr, table.cpu_data[cnt], cnt)
         table.cpu.append(card)
 
     # Create YOUR data -----
-    your_data, joker_flag = Poker.initialize(joker_flag)
-    """
-    your_data, joker_flag = [
-        [3, 10], [3, 11], [3, 12], [3, 13], [4, 14]
-    ], False
-    """
-    your_name = Poker.judge(your_data)
+    table.your_data = Poker.initialize(card_pack)
+    your_name = Poker.judge(table.your_data)
     your_point = Poker.battle(your_name)
-    for cnt in range(len(your_data)):
-        card = Card(0, scr, your_data[cnt], cnt)
+    for cnt in range(len(table.your_data)):
+        card = Card(0, scr, table.your_data[cnt], cnt)
         table.you.append(card)
 
-    se_deals.play()
+    se_deals5.play()
+    key_list = [K_1, K_2, K_3, K_4, K_5]
     while True:
         scr.blit(bgImage_play2, (0, 0))
         for i in range(5):
             table.dealing(1, i)
             table.dealing(0, i)
-        pygame.display.update()     # 画面を更新
+        pygame.display.update()
 
         # イベント処理
         for event in pygame.event.get():
-            if event.type == QUIT:  # 閉じるボタンが押されたら終了
-                pygame.quit()       # Pygameの終了(画面閉じられる)
+            if event.type == QUIT:
+                pygame.quit()
                 sys.exit()
             if event.type == KEYDOWN:
                 if event.key == K_SPACE:
                     se.play()
-                    your_point = card_reset(table, screen)
+                    your_point, card_pack = card_all_reset(table, screen, card_pack, joker_flag)
                 if event.key == K_RETURN:
                     if table.you_deal == 5:
                         se.play()
                         card_set(table, screen, your_point, cpu_point)
+                if event.key in key_list:
+                    for i in range(len(key_list)):
+                        if event.key == key_list[i]:
+                            your_point, card_pack = card_reset(i, table, screen, card_pack, joker_flag)
 
 
 def title_screen(scr):
@@ -277,12 +318,14 @@ if __name__ == "__main__":
     screen = pygame.display.set_mode((1280, 720))
     pygame.display.set_caption("POKER - Kadai0205")
 
-    bgImage = pygame.image.load("./Kadai02/title.png")
-    bgImage_play = pygame.image.load("./Kadai02/play.png")
-    bgImage_play2 = pygame.image.load("./Kadai02/play2.png")
+    path = './Kadai02/'
+    bgImage = pygame.image.load(path + "title.png")
+    bgImage_play = pygame.image.load(path + "play.png")
+    bgImage_play2 = pygame.image.load(path + "play3.png")
 
-    se = pygame.mixer.Sound("./Kadai02/decision3.wav")
-    se_deals = pygame.mixer.Sound("./Kadai02/deal5.wav")
+    se = pygame.mixer.Sound(path + "decision3.wav")
+    se_deals1 = pygame.mixer.Sound(path + "deal1.wav")
+    se_deals5 = pygame.mixer.Sound(path + "deal5.wav")
 
     # MAIN LOOP -----
     title_screen(screen)

@@ -1,34 +1,76 @@
 # coding: utf-8
 # Coding Skills: Kadai02
-# 345(29) Daigo Miyajima
+# 345(30)
 
 import random
 
 
-def initialize(jf):
+# ---------------------------------------------
+# プレイで使用するカードパック
+# [IN]
+#   jf(bool): ジョーカーを含むか
+#   max_joker(int): ジョーカーの枚数（１～４）
+# [OUT]
+#   none
+# ---------------------------------------------
+class CardPack:
+    def __init__(self, jf, max_joker=1):
+
+        # Include Joker or not
+        package_max = [3, 13 + 1]
+        if jf:
+            package_max = [4, 14 + 1]
+
+        # Create package
+        self.cards = []
+        for s in range(package_max[0]):
+            for n in range(1, package_max[1]):
+
+                # Limitation Joker
+                if n == 14:
+                    if s < 4 - max_joker:
+                        self.cards.append([4, n])
+                else:
+                    self.cards.append([s, n])
+
+
+# ---------------------------------------------
+# カードを５枚引く
+# [IN]
+#   package(class): 使用するパッケージ
+# [OUT]
+#   dt (int[][]): カードデータ２次元配列[[suit, number]...]
+# ---------------------------------------------
+def initialize(package):
     dt = []
     for i in range(5):
-        if jf:
-            dt.append([0, random.randint(1, 14)])
-            if [0, 14] in dt:
-                jf = False
-        else:
-            dt.append([0, random.randint(1, 13)])
+        dt.append(draw_card(package))
 
-    for i in range(5):
-        if dt[i][1] == 14:
-            dt[i][0] = 4
-        else:
-            suit = random.randint(0, 3)
-            dt[i][0] = suit
-            for j in range(i):
-                if dt[i] == dt[j]:
-                    var = dt[i][0]
-                    dt[i][0] = (var + 1) % 4
-
-    return dt, jf
+    return dt
 
 
+# ---------------------------------------------
+# カードを１枚引く
+# [IN]
+#   package(class): 使用するパッケージ
+# [OUT]
+#   dt (int[]): カードデータ配列[suit, number]
+# ---------------------------------------------
+def draw_card(package):
+    target_index = random.randrange(len(package.cards))
+    dt = package.cards[target_index]
+    del package.cards[target_index]
+
+    return dt
+
+
+# ---------------------------------------------
+# スート、数字を文字列に変換
+# [IN]
+#   card(int[]): 変換するカードデータ[suit, number]
+# [OUT]
+#   int[]: 変換後カードデータ配列[suit, number]
+# ---------------------------------------------
 def convert(card):
     suit, number = card
     suit_char = ['S', 'C', 'D', 'H', 'J']
@@ -42,6 +84,16 @@ def convert(card):
     return [suit_char[suit], number]
 
 
+# ---------------------------------------------
+# ペアをカウント
+# [IN]
+#   nd(int[]): 手札内の数字配列
+#   ps: 数えたペアの数
+#   mx: 計算中のペア最大枚数
+# [OUT]
+#   mx(int): ペアで一番多い枚数
+#   pair: ペアの数
+# ---------------------------------------------
 def count_pairs(nd, ps, mx):
     pair = 0
     for i in range(4):
@@ -61,7 +113,15 @@ def count_pairs(nd, ps, mx):
     return mx, pair
 
 
-def has_same_name(num_data):
+# ---------------------------------------------
+# 手札に同じ数字/ペアがあるか
+# [IN]
+#   num_data(int[]): 手札内の数字配列
+# [OUT]
+#   max_pair(int): 手札のペアの中で最大の枚数
+#   pair(int): ペアの数
+# ---------------------------------------------
+def has_same_num(num_data):
     max_pair = 0
     pair = 0
     pairs = 0
@@ -73,6 +133,14 @@ def has_same_name(num_data):
     return max_pair, pair
 
 
+# ---------------------------------------------
+# 階段があるか
+# [IN]
+#   num_data(int[]): 手札内の数字配列
+# [OUT]
+#   bool: True:階段状態, False:階段なし
+#   flag(int): ロイヤルフラッシュかどうか（0 or 1）
+# ---------------------------------------------
 def is_stairs(num_data):
     # has JOKER?
     joker = False
@@ -82,7 +150,6 @@ def is_stairs(num_data):
 
     sorted_list = sorted(num_data)
     parent = sorted_list[0]
-    print(sorted_list, parent)
     if parent == 1:
         if sorted_list[-1] == 13:
             for i in range(len(sorted_list)):
@@ -101,8 +168,6 @@ def is_stairs(num_data):
     # [x,  2,  3, 12, 13]
     # [x,  2,  3,  4, 13]
     # [1,  2,  3,  4,  5]
-
-    print(distance)
 
     if distance == [0, 1, 2, 3, 4]:
         if parent == 10:
@@ -126,6 +191,13 @@ def is_stairs(num_data):
         return False, 0
 
 
+# ---------------------------------------------
+# 役判定
+# [IN]
+#   dt(int[][]): 手札のカードデータ配列
+# [OUT]
+#   nm(string): 役名
+# ---------------------------------------------
 def judge(dt):
     nm = [
         'ハイカード',  # 0-: default
@@ -168,7 +240,7 @@ def judge(dt):
         return nm[4]
     # Two pairs or Three card
     elif pair_list_num == 3:
-        max_pair, num = has_same_name(num_dt)
+        max_pair, num = has_same_num(num_dt)
         if max_pair == 3:
             if joker:
                 return nm[5]
@@ -207,6 +279,14 @@ def judge(dt):
                 return nm[0]
 
 
+# ---------------------------------------------
+# 結果の表示
+# [IN]
+#   dt(int[][]): 手札のカードデータ配列
+#   nm(string): 役名
+# [OUT]
+#   none
+# ---------------------------------------------
 def result(dt, nm):
     display = ''
     for i in range(5):
@@ -217,6 +297,13 @@ def result(dt, nm):
     print(nm)
 
 
+# ---------------------------------------------
+# 役の強弱判定
+# [IN]
+#   dt(int[][]): 手札のカードデータ配列
+# [OUT]
+#   int: 役に当てはめたポイント
+# ---------------------------------------------
 def battle(dt):
     pt = [
         'ハイカード',  # 0
