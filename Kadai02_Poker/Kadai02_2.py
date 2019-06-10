@@ -2,7 +2,7 @@
 # Coding Skills: Kadai02
 # 345(29) Daigo Miyajima
 
-import Kadai02 as Poker
+from FriAM_CodingSkills.Kadai02_Poker import Kadai02 as Poker
 
 
 if __name__ == "__main__":

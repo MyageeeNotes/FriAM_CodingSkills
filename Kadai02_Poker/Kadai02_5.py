@@ -6,40 +6,47 @@ from pygame.locals import *
 import sys
 import os
 import time
-import Kadai02 as Poker
+from FriAM_CodingSkills.Kadai02_Poker import Kadai02 as Poker
 
 
 # ------------------------------
 # Dealing cards information.
-#
+# CPU data and YOUR data
 # ------------------------------
 class Table:
     # Initialize
     def __init__(self, scr):
         self.screen = scr
-        self.you = []       # Your Cards [suit, number] x5
-        self.cpu = []       # CPU Cards
-        self.you_nm_img = ''    # Your Hand image
-        self.cpu_nm_img = ''    # CPU Hand image
-        self.you_deal = 0   # Finish dealing cards for animation
-        self.cpu_deal = 0   # Finish dealing cards for animation
+        
+        # Cards data class
+        self.you = []
+        self.cpu = []
+
+        # [suit, number] x5
         self.your_data = []
         self.cpu_data = []
+        
+        # Hand name image
+        self.name_image = {'you': '', 'cpu': ''}
+        
+        # Finish dealing cards for animation
+        self.you_deal = 0
+        self.cpu_deal = 0
 
     def load_nm_img(self, turn, pt):
         p = os.path.join('Name', str(pt) + '.png')
         if turn == 0:
-            self.you_nm_img = pygame.image.load(p)
-            self.you_nm_img = pygame.transform.scale(
-                self.you_nm_img, (1500, 500))
+            self.name_image['you'] = pygame.image.load(p)
+            self.name_image['you'] = pygame.transform.scale(
+                self.name_image['you'], (1500, 500))
         else:
-            self.cpu_nm_img = pygame.image.load(p)
-            self.cpu_nm_img = pygame.transform.scale(
-                self.cpu_nm_img, (900, 300))
+            self.name_image['cpu'] = pygame.image.load(p)
+            self.name_image['cpu'] = pygame.transform.scale(
+                self.name_image['cpu'], (900, 300))
 
     def display_nm_img(self):
-        self.screen.blit(self.cpu_nm_img, (200, 5))
-        self.screen.blit(self.you_nm_img, (-80, 180))
+        self.screen.blit(self.name_image['cpu'], (200, 5))
+        self.screen.blit(self.name_image['you'], (-80, 180))
 
     def dealing(self, turn, pos):
         if turn == 0:
@@ -146,7 +153,7 @@ class Card:
         if self.flip:
             self.deal_animation()
             self.screen.blit(self.img, self.pos_now)
-            
+
         else:
             self.deal_animation()
             self.screen.blit(self.bg_img, self.pos_now)
@@ -273,19 +280,25 @@ def play_screen(scr):
             table.dealing(0, i)
         pygame.display.update()
 
-        # イベント処理
+        # Event
         for event in pygame.event.get():
+            # Close window
             if event.type == QUIT:
                 pygame.quit()
                 sys.exit()
+
+            # Keyboard event
             if event.type == KEYDOWN:
+
                 if event.key == K_SPACE:
                     se.play()
                     your_point, card_pack = card_all_reset(table, screen, card_pack, joker_flag)
+
                 if event.key == K_RETURN:
                     if table.you_deal == 5:
                         se.play()
                         card_set(table, screen, your_point, cpu_point)
+
                 if event.key in key_list:
                     for i in range(len(key_list)):
                         if event.key == key_list[i]:
@@ -293,17 +306,25 @@ def play_screen(scr):
 
 
 def title_screen(scr):
+    # play Title BGM
     pygame.mixer.music.load("./sound/249_NightCity.mp3")
     pygame.mixer.music.play(-1)
+
     while True:
+        # Renew background image
         scr.fill((0, 0, 0))
         scr.blit(bgImage, (0, 0))
         pygame.display.update()
-        # イベント処理
+
+        # Events
         for event in pygame.event.get():
+
+            # Close window
             if event.type == QUIT:
                 pygame.quit()
                 sys.exit()
+
+            # Keyboard event
             if event.type == KEYDOWN:
                 pygame.mixer.music.stop()
                 se.play()
