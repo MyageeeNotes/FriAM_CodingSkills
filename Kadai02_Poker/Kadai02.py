@@ -7,46 +7,29 @@ import random
 
 # ---------------------------------------------
 # プレイで使用するカードパック
+# [list] cards
 # [IN]
-#   jf(bool): ジョーカーを含むか
-#   max_joker(int): ジョーカーの枚数（１～４）
+#   max_joker(int): ジョーカーの枚数（0~2）
 # [OUT]
 #   none
 # ---------------------------------------------
 class CardPack:
-    def __init__(self, jf, max_joker=1):
+    def __init__(self, max_joker=1):
+
+        self.cards = []
 
         # Include Joker or not
-        package_max = [3, 13 + 1]
-        if jf:
-            package_max = [4, 14 + 1]
+        package_max = [4, 15]
 
         # Create package
-        self.cards = []
         for s in range(package_max[0]):
             for n in range(1, package_max[1]):
-
-                # Limitation Joker
+                # Limitation Jokers
                 if n == 14:
-                    if s < 4 - max_joker:
+                    if s < max_joker:
                         self.cards.append([4, n])
                 else:
                     self.cards.append([s, n])
-
-
-# ---------------------------------------------
-# カードを５枚引く
-# [IN]
-#   package(class): 使用するパッケージ
-# [OUT]
-#   dt (int[][]): カードデータ２次元配列[[suit, number]...]
-# ---------------------------------------------
-def initialize(package):
-    dt = []
-    for i in range(5):
-        dt.append(draw_card(package))
-
-    return dt
 
 
 # ---------------------------------------------
@@ -60,6 +43,21 @@ def draw_card(package):
     target_index = random.randrange(len(package.cards))
     dt = package.cards[target_index]
     del package.cards[target_index]
+
+    return dt
+
+
+# ---------------------------------------------
+# カードを５枚引く
+# [IN]
+#   package(class): 使用するパッケージ
+# [OUT]
+#   dt (int[][]): カードデータ２次元配列[[suit, number]...]
+# ---------------------------------------------
+def initialize(package):
+    dt = []
+    for i in range(5):
+        dt.append(draw_card(package))
 
     return dt
 
@@ -91,7 +89,7 @@ def convert(card):
 #   ps: 数えたペアの数
 #   mx: 計算中のペア最大枚数
 # [OUT]
-#   mx(int): ペアで一番多い枚数
+#   mx(int): 一番多い枚数のペア
 #   pair: ペアの数
 # ---------------------------------------------
 def count_pairs(nd, ps, mx):

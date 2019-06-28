@@ -1,30 +1,39 @@
 # coding: utf-8
 # Coding Skills: Kadai01
-# 345(29) Daigo Miyajima
+# 345(29)
 
-path = 'Kadai01_data.txt'
 
-def initialize():
-    with open(path) as f:
+# データ読み込み
+# IN:
+#   -str(改行区切りデータ)
+# OUT:
+#   -[int(p)] = 自機データ,
+#   -int(e_max) = 敵機数,
+#   -[int(enms)] = 敵機データ
+def initialize(d):
 
-        player = f.readline().split(' ')
-        player = [int(s) for s in player]
+    data_list = d.split('\n')   # 改行区切り
 
-        enemy_max = int(f.readline())
+    # 自機データ
+    p = data_list.pop(0).split(' ') # スペース区切り
+    p = [int(s) for s in p]     # 整数型に変換
 
-        enemies = []
-        for i in range(enemy_max):
-            data = f.readline().split(' ')
-            data = [int(s) for s in data]
-            enemies.append(data)
+    # 敵機データ
+    e_max = int(data_list.pop(0))
+    enms = []
+    for x in range(e_max):
+        data = data_list[x].split(' ')
+        data = [int(s) for s in data]
+        enms.append(data)
 
-    return player, enemy_max, enemies
+    return p, e_max, enms
 
-def start(player,enemy_max,enemies):
+
+def judge(player, enemy_max, enemies):
     for i in range(enemy_max):
 
-        px,py,pw,ph = player
-        ex,ey,ew,eh = enemies[i]
+        px, py, pw, ph = player
+        ex, ey, ew, eh = enemies[i]
 
         center = {
             'px': px + pw / 2, 'py': py + ph / 2,
@@ -38,8 +47,4 @@ def start(player,enemy_max,enemies):
 
         if abs(center['px'] - center['ex']) < distance['x']:
             if abs(center['py'] - center['ey']) < distance['y']:
-                print('敵機 {} が当たり'.format( i + 1 ))
-
-if __name__ == "__main__":
-    player, enemy_max, enemies = initialize()
-    start(player, enemy_max, enemies)
+                print('敵機 {} が当たり'.format(i + 1))

@@ -1,6 +1,6 @@
 # coding: utf-8
-# Coding Skills: Kadai02-5
-# 345(29) Daigo Miyajima
+# Coding Skills: Kadai01-1
+# 課題１－３（オプション）
 
 # -*- coding:utf-8 -*-
 import pygame
