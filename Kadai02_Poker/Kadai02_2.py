@@ -1,6 +1,6 @@
 # coding: utf-8
 # Coding Skills: Kadai02
-# 345(29) Daigo Miyajima
+# 345(30)
 
 from FriAM_CodingSkills.Kadai02_Poker import Kadai02 as Poker
 

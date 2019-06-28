@@ -1,5 +1,6 @@
 # coding: utf-8
 # Coding Skills: Kadai02-5
+# 345(30)
 
 import pygame
 from pygame.locals import *
