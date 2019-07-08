@@ -1,13 +1,13 @@
 # coding: utf-8
 # Coding Skills: Kadai01
-# 345(29)
+# 345(30)
 
 from PIL import Image
 
 
 # データ読み込み
 # IN:
-#   -str(改行区切りデータ)
+#   -str(d:改行区切りデータ)
 # OUT:
 #   -[int(p)] = 自機データ,
 #   -int(e_max) = 敵機数,
@@ -81,6 +81,7 @@ def pro_judge(p, e, pimg, eimg):
 
         p_cr = {'sx': 0, 'sy': 0, 'ex': 0, 'ey': 0}
         e_cr = {'sx': 0, 'sy': 0, 'ex': 0, 'ey': 0}
+
         # Locate Range
         if c['px'] - c['ex'] < 0:
             p_cr['sx'] = c['px'] - cr_x
