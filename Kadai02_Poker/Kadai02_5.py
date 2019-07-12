@@ -7,7 +7,7 @@ from pygame.locals import *
 import sys
 import os
 import time
-from FriAM_CodingSkills.Kadai02_Poker import Kadai02 as Poker
+import Kadai02 as Poker
 
 
 # ------------------------------
