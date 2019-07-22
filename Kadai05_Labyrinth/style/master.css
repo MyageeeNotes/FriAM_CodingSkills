@@ -17,6 +17,7 @@ html {
     margin: 0px;
     padding: 0px;
     color: #454545;
+	background-color: #AAA;
 }
 
 body {
@@ -26,8 +27,9 @@ body {
 #field {
 	table-layout: fixed;
 	border-spacing: 1px;
-
 	position: relative;
+	margin: auto;
+	top: calc(50% - 400px);
 }
 #field td {
 	width: 20px;
