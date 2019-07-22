@@ -17,28 +17,105 @@ html {
     margin: 0px;
     padding: 0px;
     color: #454545;
+	background-color: #123;
+	user-select: none;
 }
 
 body {
     width: 100%; height: 100%;
     margin: 0px auto;
+	/* perspective: 1000px; */
+	font-family: 'Special Elite', cursive;
+}
+#turn {
+	position: absolute;
+	display: block;
+	width: 200px;
+	height: 50px;
+	text-align: center;
+	color: white;
+	font-size: 40px;
+	/* text-shadow: 0 0 5px skyblue; */
+	margin: 50px auto 0px;
+	left: 0px; right: 0px;
+	cursor: pointer;
+	overflow: hidden;
 }
 #field {
+	position: absolute;
+	margin: auto;
+	top: 15%;
 	table-layout: fixed;
-	border-spacing: 1px;
+	border-spacing: 0px;
+	/* border-spacing: 8px; */
 
 	position: relative;
+	/* transform: rotateX(50deg); */
 }
 #field td {
-	width: 20px;
-	height: 20px;
-	background-color: white;
-	border: 1px solid silver;
+	width: 30px;
+	height: 30px;
+	border: 1px solid skyblue;
 	cursor: pointer;
+	/* transform: rotate(45deg); */
+	background-color: transparent;
+	text-align: center;
+	font-size: 0.8em;
+	color: rgba(255,255,255,0.5);
 }
 #field td:hover {
-	background-color: silver;
+	background-color: skyblue;
 }
 #field td.alive {
-	background-color: black;
+	background-color: skyblue;
+	/* box-shadow: 0 0 2px 5px rgba(255,255,255,0.2); */
+	/* animation: born 0.2s ease-in-out; */
+}
+#field td.dead {
+	background-color: transparent;
+	/* animation: dead 0.2s ease-in-out; */
+}
+
+@keyframes born {
+	0% {
+		background-color: transparent;
+		box-shadow: 0 0 2px 5px rgba(255,255,255,0.0);
+		},
+	100% {
+		background-color: skyblue;
+		box-shadow: 0 0 2px 5px rgba(255,255,255,0.2);
+	}
+}
+@keyframes dead {
+	0% {
+		background-color: skyblue;
+		box-shadow: 0 0 2px 5px rgba(255,255,255,0.2);
+		},
+	100% {
+		background-color: transparent;
+		box-shadow: 0 0 2px 5px rgba(255,255,255,0.0);
+	}
+}
+
+#controller {
+	table-layout: fixed;
+	position: absolute;
+	margin: 0px auto;
+	border-spacing: 5px 0px;
+	bottom: 20px;
+	left: calc(50% - 160px);
+}
+#controller td {
+	text-align: center;
+	font-family: iconFont;
+	color: white;
+	padding: 5px 10px;
+	cursor: pointer;
+	width: 100px;
+	background-color: #09B;
+	border-radius: 20px;
+}
+#controller td:hover {
+	transition: 0.3s;
+	background-color: #0BE;
 }
