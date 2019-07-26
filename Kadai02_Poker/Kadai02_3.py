@@ -1,8 +1,8 @@
 # coding: utf-8
-# Coding Skills: Kadai02
-# 345(30)
+# Coding Skills: Kadai02-3
+# 課題２－３
 
-from FriAM_CodingSkills.Kadai02_Poker import Kadai02 as Poker
+import Kadai02 as Poker
 
 if __name__ == "__main__":
 

@@ -1,6 +1,6 @@
 # coding: utf-8
 # Coding Skills: Kadai02
-# 345(30)
+# 課題２
 
 import random
 
