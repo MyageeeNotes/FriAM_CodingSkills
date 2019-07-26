@@ -2,7 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0d346c6b-03a2-4e09-a308-848c964a625a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Kadai02_Poker/Kadai02_5.py" beforeDir="false" afterPath="$PROJECT_DIR$/Kadai02_Poker/Kadai02_5.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/n1260263.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Kadai04_LifeGame/Kadai04_1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Kadai01_CollisionDetection/Kadai01.py" beforeDir="false" afterPath="$PROJECT_DIR$/Kadai01_CollisionDetection/Kadai01.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Kadai01_CollisionDetection/Kadai01_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/Kadai01_CollisionDetection/Kadai01_1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Kadai01_CollisionDetection/Kadai01_2.py" beforeDir="false" afterPath="$PROJECT_DIR$/Kadai01_CollisionDetection/Kadai01_2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Kadai01_CollisionDetection/Kadai01_3.py" beforeDir="false" afterPath="$PROJECT_DIR$/Kadai01_CollisionDetection/Kadai01_3.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Kadai01_CollisionDetection/Kadai01_readme.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Kadai01_CollisionDetection/Kadai01_readme.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Kadai04_LifeGame/script/master.js" beforeDir="false" afterPath="$PROJECT_DIR$/Kadai04_LifeGame/script/master.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,29 +21,71 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Kadai04_LifeGame/index.html">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/Kadai01_CollisionDetection/Kadai01.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-3352">
+              <caret line="1" column="18" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Kadai02_Poker/Kadai02_5.py">
+        <entry file="file://$PROJECT_DIR$/Kadai01_CollisionDetection/Kadai01_readme.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="9" selection-start-line="9" selection-end-line="9" />
+            <state relative-caret-position="26">
+              <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Kadai02_Poker/Kadai02.py">
+        <entry file="file://$PROJECT_DIR$/Kadai01_CollisionDetection/Kadai01_1.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="314">
-              <caret line="56" column="24" lean-forward="true" selection-start-line="56" selection-start-column="24" selection-end-line="56" selection-end-column="24" />
+            <state relative-caret-position="104">
+              <caret line="4" column="9" lean-forward="true" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Kadai01_CollisionDetection/Kadai01_2.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="26">
+              <caret line="1" column="26" selection-start-line="1" selection-start-column="26" selection-end-line="1" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Kadai01_CollisionDetection/Kadai01_3.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="362">
+              <caret line="14" column="19" lean-forward="true" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
+              <folding>
+                <element signature="e#82#95#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>//</find>
+      <find>this.</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>#</replace>
+      <replace>self.</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -44,17 +94,12 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Kadai02_Poker/Kadai02_5.py" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectConfigurationFiles">
-    <option name="files">
-      <list>
-        <option value="$PROJECT_DIR$/.idea/FriAM_CodingSkills.iml" />
-        <option value="$PROJECT_DIR$/.idea/misc.xml" />
-        <option value="$PROJECT_DIR$/.idea/vcs.xml" />
-        <option value="$PROJECT_DIR$/.idea/modules.xml" />
-        <option value="$PROJECT_DIR$/.idea/libraries/R_User_Library.xml" />
+        <option value="$PROJECT_DIR$/Kadai04_LifeGame/Kadai04_1.py" />
+        <option value="$PROJECT_DIR$/Kadai01_CollisionDetection/Kadai01_3.py" />
+        <option value="$PROJECT_DIR$/Kadai01_CollisionDetection/Kadai01_2.py" />
+        <option value="$PROJECT_DIR$/Kadai01_CollisionDetection/Kadai01.py" />
+        <option value="$PROJECT_DIR$/Kadai01_CollisionDetection/Kadai01_1.py" />
+        <option value="$PROJECT_DIR$/Kadai01_CollisionDetection/Kadai01_readme.txt" />
       </list>
     </option>
   </component>
@@ -79,18 +124,12 @@
             <path>
               <item name="FriAM_CodingSkills" type="b2602c69:ProjectViewProjectNode" />
               <item name="FriAM_CodingSkills" type="462c0819:PsiDirectoryNode" />
-              <item name="Kadai02_Poker" type="462c0819:PsiDirectoryNode" />
+              <item name="Kadai01_CollisionDetection" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="FriAM_CodingSkills" type="b2602c69:ProjectViewProjectNode" />
               <item name="FriAM_CodingSkills" type="462c0819:PsiDirectoryNode" />
               <item name="Kadai04_LifeGame" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FriAM_CodingSkills" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FriAM_CodingSkills" type="462c0819:PsiDirectoryNode" />
-              <item name="Kadai04_LifeGame" type="462c0819:PsiDirectoryNode" />
-              <item name="script" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -99,6 +138,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
@@ -114,8 +154,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Kadai02_5">
-    <configuration name="Kadai02" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.Kadai01_3">
+    <configuration name="Kadai01_1" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="FriAM_CodingSkills" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -123,11 +163,53 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Kadai02_Poker" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Kadai01_CollisionDetection" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Kadai02_Poker/Kadai02.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Kadai01_CollisionDetection/Kadai01_1.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Kadai01_2" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="FriAM_CodingSkills" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Kadai01_CollisionDetection" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Kadai01_CollisionDetection/Kadai01_2.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Kadai01_3" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="FriAM_CodingSkills" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Kadai01_CollisionDetection" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Kadai01_CollisionDetection/Kadai01_3.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -157,10 +239,34 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="Kadai04_1" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="FriAM_CodingSkills" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Kadai04_LifeGame" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Kadai04_LifeGame/Kadai04_1.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.Kadai01_3" />
+        <item itemvalue="Python.Kadai01_2" />
+        <item itemvalue="Python.Kadai01_1" />
+        <item itemvalue="Python.Kadai04_1" />
         <item itemvalue="Python.Kadai02_5" />
-        <item itemvalue="Python.Kadai02" />
       </list>
     </recent_temporary>
   </component>
@@ -181,12 +287,12 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2593583" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26898396" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32890365" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32890365" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39977852" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -197,20 +303,12 @@
       <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.24973261" />
       <window_info anchor="right" id="R Graphics" order="3" />
       <window_info anchor="right" id="R Packages" order="4" />
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Kadai01_CollisionDetection/Kadai01.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3404" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Kadai04_LifeGame/index.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/Kadai04_LifeGame/script/master.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="52">
@@ -218,24 +316,78 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Kadai02_Poker/Kadai02_1.py">
+    <entry file="file://$PROJECT_DIR$/Kadai02_Poker/Kadai02.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="8" column="38" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="38" />
+        <state relative-caret-position="1456">
+          <caret line="56" column="24" selection-start-line="56" selection-start-column="24" selection-end-line="56" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Kadai02_Poker/Kadai02.py">
+    <entry file="file://$PROJECT_DIR$/Kadai04_LifeGame/index.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Kadai02_Poker/Kadai02_1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="56" column="24" lean-forward="true" selection-start-line="56" selection-start-column="24" selection-end-line="56" selection-end-column="24" />
+        <state relative-caret-position="208">
+          <caret line="8" column="38" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="38" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Kadai02_Poker/Kadai02_5.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        <state relative-caret-position="793">
+          <caret line="313" column="4" selection-start-line="313" selection-start-column="4" selection-end-line="331" selection-end-column="32" />
+          <folding>
+            <element signature="e#54#67#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Kadai04_LifeGame/Kadai04_1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="793">
+          <caret line="153" column="12" selection-start-line="153" selection-start-column="12" selection-end-line="153" selection-end-column="12" />
+          <folding>
+            <element signature="e#16#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Kadai01_CollisionDetection/Kadai01_3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="362">
+          <caret line="14" column="19" lean-forward="true" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
+          <folding>
+            <element signature="e#82#95#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Kadai01_CollisionDetection/Kadai01_2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="26">
+          <caret line="1" column="26" selection-start-line="1" selection-start-column="26" selection-end-line="1" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Kadai01_CollisionDetection/Kadai01.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3352">
+          <caret line="1" column="18" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Kadai01_CollisionDetection/Kadai01_1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="4" column="9" lean-forward="true" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Kadai01_CollisionDetection/Kadai01_readme.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="26">
+          <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
         </state>
       </provider>
     </entry>

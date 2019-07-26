@@ -1,6 +1,5 @@
 # coding: utf-8
 # Coding Skills: Kadai01
-# 345(30)
 
 from PIL import Image
 
