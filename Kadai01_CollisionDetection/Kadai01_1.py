@@ -1,8 +1,8 @@
 # coding: utf-8
-# Coding Skills: Kadai01
-# 345(29)
+# # Coding Skills: Kadai01-1
+# # 課題１－１
 
-from FriAM_CodingSkills.Kadai01_CollisionDetection import Kadai01 as ColDct
+import Kadai01 as ColDct
 
 if __name__ == "__main__":
 
