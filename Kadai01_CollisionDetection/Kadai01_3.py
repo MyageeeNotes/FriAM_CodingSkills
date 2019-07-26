@@ -1,5 +1,5 @@
 # coding: utf-8
-# Coding Skills: Kadai01-1
+# Coding Skills: Kadai01-3
 # 課題１－３（オプション）
 
 # -*- coding:utf-8 -*-

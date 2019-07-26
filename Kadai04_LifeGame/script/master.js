@@ -4,13 +4,13 @@ var field = {
 	'y': 10,
 	'lifes': [],
 	'init': undefined,
-	'random': 80
+	'random': 10
 }
 // Frame info.
 var frame = {
 	'now': 0,
 	'finish': 2019,
-	'speed': 10
+	'speed': 200
 }
 
 // 1. CREATE MAP DATA

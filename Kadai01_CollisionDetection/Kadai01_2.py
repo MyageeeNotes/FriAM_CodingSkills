@@ -1,8 +1,8 @@
 # coding: utf-8
-# Coding Skills: Kadai01
-# 345(29)
+# Coding Skills: Kadai01-2
+# 課題１－２
 
-from FriAM_CodingSkills.Kadai01_CollisionDetection import Kadai01 as ColDct
+import Kadai01 as ColDct
 
 
 data = "1000 1000 400 600\n3\n200 1300 830 390\n370 1300 830 390\n500 900 830 390"
