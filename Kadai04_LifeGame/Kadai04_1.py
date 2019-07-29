@@ -9,19 +9,20 @@ import math
 
 # Field info.
 field = {
+    'title': "Life Game - Kadai0205",
     'size': (720, 720),
-    'x': 120,
-    'y': 120,
+    'x': 34,
+    'y': 34,
     'screen': None,
     'lifes': [],
     'init': None,
-    'random': 1000
+    'random': 200
 }
 # Frame info.
 frame = {
     'now': 0,
     'finish': 2019,
-    'speed': 50
+    'speed': 100
 }
 
 if __name__ == '__main__':
@@ -149,6 +150,14 @@ if __name__ == '__main__':
             self.life = not self.life
             field['init'][self.pos[0] + self.pos[1] * field['x']] = self.life
 
+    # Vessel Update
+    def vessel_update():
+        cnt = 0
+        for y in range(field['y']):
+            for x in range(field['x']):
+                mapping(x, y, field['init'][cnt])
+                cnt += 1
+
     # Judge life
     def spend():
         frame['now'] += 1
@@ -156,11 +165,6 @@ if __name__ == '__main__':
             field['init'][i] = field['lifes'][i].spend()
         for i in range(len(field['lifes'])):
             field['lifes'][i].set_vessel(field['init'][i])
-        cnt = 0
-        for y in range(field['y']):
-            for x in range(field['x']):
-                mapping(x, y, field['init'][cnt])
-                cnt += 1
 
     # ------------------------------------------------------------------
     # set Playing stop
@@ -173,7 +177,12 @@ if __name__ == '__main__':
         field['screen'].fill((50, 50, 50))
 
         if playing_stat:
+            pygame.display.set_caption(field['title'] + " - START")
             spend()
+        else:
+            pygame.display.set_caption(field['title'] + " - STOP")
+        vessel_update()
+
         # FINISH
         if frame['now'] == frame['finish']:
             print("Finish -- Max Frames: {}".format(frame['finish']))
@@ -190,7 +199,7 @@ if __name__ == '__main__':
             # Keyboard event
             if event.type == KEYDOWN:
                 if event.key == K_RETURN:
-                    sys.exit()
+                    playing_stat = not playing_stat
             if event.type == MOUSEBUTTONDOWN and event.button == 1:
                 x, y = event.pos
                 size = {
@@ -201,5 +210,6 @@ if __name__ == '__main__':
                 px = math.floor(x / size['x'])
                 py = math.floor(y / size['y'])
                 field['lifes'][px + py * field['x']].god_hand()
+                vessel_update()
 
         time.sleep(frame['speed'] / 1000)

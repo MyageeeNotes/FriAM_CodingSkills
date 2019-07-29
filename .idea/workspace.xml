@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0d346c6b-03a2-4e09-a308-848c964a625a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Kadai02_Poker/Kadai02.py" beforeDir="false" afterPath="$PROJECT_DIR$/Kadai02_Poker/Kadai02.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kadai02_Poker/Kadai02_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/Kadai02_Poker/Kadai02_1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kadai02_Poker/Kadai02_2.py" beforeDir="false" afterPath="$PROJECT_DIR$/Kadai02_Poker/Kadai02_2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kadai02_Poker/Kadai02_3.py" beforeDir="false" afterPath="$PROJECT_DIR$/Kadai02_Poker/Kadai02_3.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kadai02_Poker/Kadai02_4.py" beforeDir="false" afterPath="$PROJECT_DIR$/Kadai02_Poker/Kadai02_4.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kadai02_Poker/Kadai02_5.py" beforeDir="false" afterPath="$PROJECT_DIR$/Kadai02_Poker/Kadai02_5.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/n1260263.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/n1260263.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Kadai04_LifeGame/Kadai04_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/Kadai04_LifeGame/Kadai04_1.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,58 +12,19 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="FriAM_CodingSkills" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Kadai02_Poker/Kadai02.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="52">
-              <caret line="2" column="5" lean-forward="true" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Kadai02_Poker/Kadai02_1.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="104">
-              <caret line="4" selection-start-line="4" selection-end-line="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Kadai02_Poker/Kadai02_2.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="104">
-              <caret line="4" selection-start-line="4" selection-end-line="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Kadai02_Poker/Kadai02_3.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="26">
-              <caret line="1" column="26" selection-start-line="1" selection-start-column="26" selection-end-line="1" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Kadai02_Poker/Kadai02_4.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="26">
-              <caret line="1" column="26" selection-start-line="1" selection-start-column="26" selection-end-line="1" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Kadai02_Poker/Kadai02_5.py">
+        <entry file="file://$PROJECT_DIR$/Kadai04_LifeGame/Kadai04_1.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="8" column="11" lean-forward="true" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
+            <state relative-caret-position="-4329">
+              <caret line="10" column="9" lean-forward="true" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
+              <folding>
+                <element signature="e#16#29#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -84,10 +42,30 @@
     <findStrings>
       <find>//</find>
       <find>this.</find>
+      <find>getVessel</find>
+      <find>size.([xy])</find>
+      <find>randFlag</find>
+      <find>\.[xy]</find>
+      <find>\.([xy])</find>
+      <find>field\.init</find>
+      <find>field\.(.*?)\)</find>
+      <find>frame\.finish</find>
+      <find>fieldLen</find>
+      <find>false</find>
+      <find>flag</find>
+      <find>mapping</find>
     </findStrings>
     <replaceStrings>
       <replace>#</replace>
       <replace>self.</replace>
+      <replace>get_vessel</replace>
+      <replace>size['$1']</replace>
+      <replace>rand_flag</replace>
+      <replace>['$1']</replace>
+      <replace>field['init']</replace>
+      <replace>frame['finish']</replace>
+      <replace>field_len</replace>
+      <replace>False</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -96,7 +74,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Kadai04_LifeGame/Kadai04_1.py" />
         <option value="$PROJECT_DIR$/Kadai01_CollisionDetection/Kadai01_3.py" />
         <option value="$PROJECT_DIR$/Kadai01_CollisionDetection/Kadai01_2.py" />
         <option value="$PROJECT_DIR$/Kadai01_CollisionDetection/Kadai01.py" />
@@ -108,11 +85,13 @@
         <option value="$PROJECT_DIR$/Kadai02_Poker/Kadai02_3.py" />
         <option value="$PROJECT_DIR$/Kadai02_Poker/Kadai02_4.py" />
         <option value="$PROJECT_DIR$/Kadai02_Poker/Kadai02_5.py" />
+        <option value="$PROJECT_DIR$/Kadai04_LifeGame/Kadai04_1.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-7" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
     <option name="width" value="525" />
     <option name="height" value="365" />
   </component>
@@ -128,11 +107,6 @@
             <path>
               <item name="FriAM_CodingSkills" type="b2602c69:ProjectViewProjectNode" />
               <item name="FriAM_CodingSkills" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FriAM_CodingSkills" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FriAM_CodingSkills" type="462c0819:PsiDirectoryNode" />
-              <item name="Kadai02_Poker" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -157,7 +131,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Kadai02_5">
+  <component name="RunManager" selected="Python.Kadai04_1">
     <configuration name="Kadai01_1" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="FriAM_CodingSkills" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -265,11 +239,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.Kadai04_1" />
         <item itemvalue="Python.Kadai02_5" />
         <item itemvalue="Python.Kadai01_3" />
         <item itemvalue="Python.Kadai01_2" />
         <item itemvalue="Python.Kadai01_1" />
-        <item itemvalue="Python.Kadai04_1" />
       </list>
     </recent_temporary>
   </component>
@@ -288,27 +262,26 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26898396" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49723145" visible="true" weight="0.3486631" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info id="Favorites" order="2" sideWeight="0.5027686" side_tool="true" visible="true" weight="0.3486631" />
+      <window_info id="Run" order="3" sideWeight="0.5027686" side_tool="true" weight="0.3486631" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32890365" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39977852" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Python Console" order="10" />
+      <window_info anchor="bottom" id="Cvs" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="4" />
+      <window_info anchor="bottom" id="Version Control" order="5" />
+      <window_info anchor="bottom" id="Terminal" order="6" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Python Console" order="8" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.24973261" />
       <window_info anchor="right" id="R Graphics" order="3" />
       <window_info anchor="right" id="R Packages" order="4" />
+      <window_info anchor="right" id="Debug" order="5" weight="0.2919786" />
     </layout>
   </component>
   <component name="editorHistoryManager">
@@ -321,16 +294,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Kadai04_LifeGame/index.html">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Kadai04_LifeGame/Kadai04_1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="793">
-          <caret line="153" column="12" selection-start-line="153" selection-start-column="12" selection-end-line="153" selection-end-column="12" />
-          <folding>
-            <element signature="e#16#29#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Kadai01_CollisionDetection/Kadai01_readme.txt">
       <provider selected="true" editor-type-id="text-editor">
@@ -373,7 +336,7 @@
     <entry file="file://$PROJECT_DIR$/Kadai02_Poker/Kadai02.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="52">
-          <caret line="2" column="5" lean-forward="true" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
+          <caret line="2" column="5" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -405,10 +368,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45682">
+          <caret line="1757" selection-start-line="1757" selection-end-line="1757" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Kadai02_Poker/Kadai02_5.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="8" column="11" lean-forward="true" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
+        <state relative-caret-position="281">
+          <caret line="242" column="41" lean-forward="true" selection-start-line="242" selection-start-column="16" selection-end-line="242" selection-end-column="41" />
+          <folding>
+            <element signature="e#52#65#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Kadai04_LifeGame/Kadai04_1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4329">
+          <caret line="10" column="9" lean-forward="true" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
+          <folding>
+            <element signature="e#16#29#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
