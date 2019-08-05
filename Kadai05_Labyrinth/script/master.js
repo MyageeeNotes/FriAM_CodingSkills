@@ -1,38 +1,59 @@
 var field = {
-  'range': [30, 30],
-  'lifes': [],
-  'init': undefined
+  'range': { 'x': 7, 'y': 7 },
+  'init': undefined,
+  'start': { 'x': 1, 'y': 1 },
+  'stack': []
 }
 var frame = {
   'now': 0,
   'finish': 1
 }
 
-var stack = [];
-
-function createWorld() {
-  var cnt = 0;
-  for (var y = 0; y < field.range[1]; y++) {
-    var tr = $('<tr></tr>');
-    for (var x = 0; x < field.range[0]; x++) {
-      var td =  $('<td></td>');
-      td.attr('id', 'x' + x + 'y' + y);
-      tr.append(td);
-
-      // EDGE
-      if (x == 0 || y == 0 || x == field.range[0] - 1 || y == field.range[1] - 1) {
-          td.addClass('wall');
-      }
-
-      field['lifes'].push(td);
-      cnt += 1;
+function initWorld(){
+    // Initialize Field life list
+	field.init = Array(field.range.x * field.range.y);
+    field.init.fill(false);
+	fieldLen = field.init.length;
+}
+function setDom(){
+    for (var y = 0; y < field.range.y; y++) {
+        var tr = $('<tr></tr>');
+        for (var x = 0; x < field.range.x; x++) {
+            var td =  $('<td></td>');
+            td.attr('id', 'x' + x + 'y' + y);
+            if(!field.init[y * field.range.x + x]){ td.addClass('wall') }
+            tr.append(td);
+        }
+        $('#field').append(tr);
     }
-    $('#field').append(tr);
-  }
+}
+function createWorld() {
+
 }
 
+function sensor(tg) {
+    var dir = 0;
+    if (0 < tg.y) {
+        if (getDom(tg.x, tg.y - 1).hasClass('wall')) { dir += 1; }
+    }
+    if (tg.x < field.range.x - 1) {
+        if (getDom(tg.x + 1, tg.y).hasClass('wall')) { dir += 2; }
+    }
+    if (tg.y < field.range.y - 1) {
+        if (getDom(tg.x, tg.y + 1).hasClass('wall')) { dir += 4; }
+    }
+    if (0 < tg.x) {
+        if (getDom(tg.x - 1, tg.y).hasClass('wall')) { dir += 8; }
+    }
+    return dir;
+}
+function getDom(x, y){
+    return $("#field tr:nth-child(" + y + ") td:nth-child(" + x + ")");
+}
 $(function () {
-  createWorld();
+    initWorld();
+    createWorld();
+    setDom();
 
   var start = setInterval(function() {
     frame.now++;

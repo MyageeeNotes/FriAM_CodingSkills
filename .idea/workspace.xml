@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0d346c6b-03a2-4e09-a308-848c964a625a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/n1260263.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/n1260263.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kadai04_LifeGame/Kadai04_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/Kadai04_LifeGame/Kadai04_1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Kadai05_Labyrinth/script/master.js" beforeDir="false" afterPath="$PROJECT_DIR$/Kadai05_Labyrinth/script/master.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Kadai05_Labyrinth/style/master.css" beforeDir="false" afterPath="$PROJECT_DIR$/Kadai05_Labyrinth/style/master.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,8 +20,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Kadai04_LifeGame/Kadai04_1.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-4329">
-              <caret line="10" column="9" lean-forward="true" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
+            <state relative-caret-position="130">
+              <caret line="10" column="9" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
               <folding>
                 <element signature="e#16#29#0" expanded="true" />
               </folding>
@@ -100,7 +100,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -112,6 +111,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -131,7 +131,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Kadai04_1">
+  <component name="RunManager" selected="Python.Kadai02_5">
     <configuration name="Kadai01_1" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="FriAM_CodingSkills" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -239,8 +239,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.Kadai04_1" />
         <item itemvalue="Python.Kadai02_5" />
+        <item itemvalue="Python.Kadai04_1" />
         <item itemvalue="Python.Kadai01_3" />
         <item itemvalue="Python.Kadai01_2" />
         <item itemvalue="Python.Kadai01_1" />
@@ -262,11 +262,12 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49723145" visible="true" weight="0.3486631" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49612403" visible="true" weight="0.29518718" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" sideWeight="0.5027686" side_tool="true" visible="true" weight="0.3486631" />
-      <window_info id="Run" order="3" sideWeight="0.5027686" side_tool="true" weight="0.3486631" />
+      <window_info id="Favorites" order="2" sideWeight="0.5027686" side_tool="true" weight="0.3486631" />
+      <window_info id="Run" order="3" sideWeight="0.503876" side_tool="true" weight="0.3529412" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Cvs" order="2" weight="0.25" />
@@ -384,8 +385,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Kadai02_Poker/Kadai02_5.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="242" column="41" lean-forward="true" selection-start-line="242" selection-start-column="16" selection-end-line="242" selection-end-column="41" />
+        <state relative-caret-position="6777">
+          <caret line="251" column="17" selection-start-line="251" selection-start-column="17" selection-end-line="251" selection-end-column="17" />
           <folding>
             <element signature="e#52#65#0" expanded="true" />
           </folding>
@@ -394,8 +395,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Kadai04_LifeGame/Kadai04_1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4329">
-          <caret line="10" column="9" lean-forward="true" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
+        <state relative-caret-position="130">
+          <caret line="10" column="9" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
           <folding>
             <element signature="e#16#29#0" expanded="true" />
           </folding>

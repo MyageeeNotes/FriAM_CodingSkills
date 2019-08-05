@@ -1,0 +1,10 @@
+*.pyc
+*.toc
+*.pyz
+*.zip
+*.idea
+*.idea/
+*.spec
+*.pkg
+*.exe
+*.manifest

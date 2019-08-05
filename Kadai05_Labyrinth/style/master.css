@@ -29,7 +29,7 @@ body {
 	border-spacing: 1px;
 	position: relative;
 	margin: auto;
-	top: calc(50% - 400px);
+	top: 20px;
 }
 #field td {
 	width: 20px;
