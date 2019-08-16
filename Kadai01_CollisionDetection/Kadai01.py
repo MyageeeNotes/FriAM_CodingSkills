@@ -66,8 +66,7 @@ def judge(p, e):
     if abs(c['px'] - c['ex']) < d['x']:
         if abs(c['py'] - c['ey']) < d['y']:
             return True
-    else:
-        return False
+    return False
 
 
 def pro_judge(p, e, pimg, eimg):
