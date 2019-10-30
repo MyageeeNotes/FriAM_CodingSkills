@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class IteratorSample1 {
@@ -28,7 +30,7 @@ class Prefecture {
     public String getName() {
         return name;
     }
-    public int getPrice() {
+    public int getNumber() {
         return number;
     }
 }
@@ -83,6 +85,14 @@ class PrefectureListAggregate implements Aggregate {
     public void add(Prefecture pref) {
         list.add(pref);
         numberOfStock += 1;
+        Collections.sort(list,
+                new Comparator<Prefecture>() {
+                    @Override
+                    public int compare(Prefecture o1, Prefecture o2) {
+                        return o1.getNumber() - o2.getNumber();
+                    }
+                }
+        );
     }
     public Prefecture getAt(int number) {
         return list.get(number);
