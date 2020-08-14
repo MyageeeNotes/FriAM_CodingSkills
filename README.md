@@ -1,3 +1,3 @@
-# FriAM_CodingSkills
+# GameAlgorithm
 
-コーディングスキル課題提出用リポジトリ
+もともとはコーディングスキル課題提出用リポジトリ
