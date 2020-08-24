@@ -1,39 +1,73 @@
 from tkinter import *
 from tkinter import ttk
 from PIL import Image, ImageTk
-
-# 専用ライブラリ
-from ImageQuiz import mondaishu
+import json
 
 
-def getHint(event, data):
-    print(hint1)
+def getHint():
+    global hints_now, img
+    if hints_now == 1:
+        # ヒント１をセット
+        hint1_label["text"] = "ヒント1: " + data[question_number]["hint1"]
+    elif hints_now == 2:
+        hint2_label["text"] = "ヒント2: " + data[question_number]["hint2"]
+    elif hints_now == 3:
+        # 画像をセット
+        img = Image.open("image/" + data[question_number]["image"])
+        img = img.resize((400, 400))
+        img = ImageTk.PhotoImage(img)
+        picture_label.configure(image=img)
+    hints_now += 1
 
 
-def setAnswer(event, mondai):
-    input = textarea.get()
+def setAnswer():
+    input_text = textarea.get()
     textarea.delete(0, END)
 
-    if input == mondai.data[4]:
+    if input_text == data[question_number]["answer"]:
         textarea.insert(0, "正解！！")
-        textarea.insert(END, "入力した答え：" + input)
+        textarea.insert(END, "入力した答え：" + input_text)
     else:
-        textarea.insert(0, "ざんねん、正解は「" + mondai.data[4] + "」でした！")
-        textarea.insert(END, "入力した答え：" + input)
+        textarea.insert(0, "ざんねん、正解は「" + data[question_number]["answer"] + "」でした！")
+        textarea.insert(END, "入力した答え：" + input_text)
 
 
-def updateQuestion(event, mondai):
-    mondai.next()
-    # 問題文をセット
-    question["text"] = "問題：" + mondai.data[0]
-    # ヒントをセット
-    hint1["text"] = "ヒント1: " + mondai.data[1]
-    hint2["text"] = "ヒント1: " + mondai.data[2]
-    # 画像をセット
-    img = Image.open("image/" + mondai.data[3])
-    img = img.resize((400, 400))
-    img = ImageTk.PhotoImage(img)
-    picture["image"] = img
+def nextQuestion():
+    global img, question_number, hints_now
+    textarea.delete(0, END)
+    hints_now = 1
+
+    if question_number < question_max:
+
+        # 問題文をセット
+        question_label["text"] = "問題：" + data[question_number]["question"]
+
+        # 前のヒントをリセット
+        hint1_label["text"] = "ヒント1: "
+        hint2_label["text"] = "ヒント2: "
+        img = Image.open("hint3.jpg")
+        img = ImageTk.PhotoImage(img)
+        picture_label.configure(image=img)
+
+        question_number += 1
+
+    else:
+        endQuiz()
+
+
+def endQuiz():
+    textarea.delete(0, END)
+    textarea.insert(0, "すべてのクイズに答えました！")
+
+
+# 外部データの読み込み
+with open("data.json", 'r', encoding="utf-8") as file:
+    data = json.load(file)
+
+# 変数の作成
+question_max = len(data)
+question_number = 0
+hints_now = 0
 
 
 # メインウィンドウの描画
@@ -43,49 +77,44 @@ root.resizable(width=False, height=False)
 root.geometry("640x640")
 
 # フレームの作成
-question_frame = ttk.Frame(root, padding=10)
 text_frame = ttk.Frame(root, padding=10)
-answer_frame = ttk.Frame(root, padding=10)
-
-with open('question.txt', encoding='utf-8') as file:
-    file = file.read().splitlines()
-    mondai = mondaishu.Mondaishu(file)
+image_frame = ttk.Frame(root, padding=5, height=400)
+answer_frame = ttk.Frame(root, padding=5)
 
 # ラベルの作成
-question = ttk.Label(question_frame, font=("", 16), padding=10)
-hint1 = ttk.Label(question_frame, font=("", 12), padding=5)
-hint2 = ttk.Label(question_frame, font=("", 12), padding=5)
-picture = ttk.Label(question_frame)
+question_label = ttk.Label(text_frame, font=("", 16), padding=10, text="問題文ラベル")
+hint1_label = ttk.Label(text_frame, font=("", 12), padding=5, text="ヒント１ラベル")
+hint2_label = ttk.Label(text_frame, font=("", 12), padding=5, text="ヒント２ラベル")
+img = Image.open("hint3.jpg")
+img = ImageTk.PhotoImage(img)
+picture_label = ttk.Label(image_frame, padding=5, image=img)
 
 # 答え入力欄の作成
-t = StringVar()
-textarea = ttk.Entry(answer_frame, font=("", 16), width=640, textvariable=t)
+text = StringVar()
+textarea = ttk.Entry(answer_frame, font=("", 16), width=640, textvariable=text)
 
 # ボタンの作成
-button1 = ttk.Button(answer_frame, padding=10, text='ヒントを出す')
-button2 = ttk.Button(answer_frame, padding=10, text='答える！')
-button3 = ttk.Button(answer_frame, padding=10, text='次の問題')
-button1.bind("<Button-1>", getHint(data=mondai))
-button2.bind("<Button-1>", setAnswer(data=mondai))
-button3.bind("<Button-1>", updateQuestion(data=mondai))
+button1 = ttk.Button(answer_frame, padding=5, text='ヒントを出す', command=lambda: getHint())
+button2 = ttk.Button(answer_frame, padding=5, text='答える！', command=lambda: setAnswer())
+button3 = ttk.Button(answer_frame, padding=5, text='スタート/次の問題', command=lambda: nextQuestion())
 
-
-# レイアウト
-question_frame.pack()
-question.pack()
-hint1.pack()
-hint2.pack()
-picture.pack()
-
+# ウィジェットの配置
 text_frame.pack()
-textarea.pack()
+question_label.pack()
+hint1_label.pack()
+hint2_label.pack()
+
+image_frame.pack()
+picture_label.pack()
 
 answer_frame.pack()
-button1.pack(pady=10, padx=60, side='left')
-button2.pack(padx=60, side='left')
-button3.pack(padx=60, side='left')
+textarea.pack()
+button1.pack(side='left', padx=60, pady=10)
+button2.pack(side='left', padx=60)
+button3.pack(side='left', padx=60)
 
-updateQuestion(question)
+# 第一問目を表示
+nextQuestion()
 
 # ウィンドウの表示開始
 root.mainloop()
