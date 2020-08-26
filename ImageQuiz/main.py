@@ -20,22 +20,23 @@ def getHint():
     hints_now += 1
 
 
-def setAnswer():
+def checkAnswer():
     input_text = textarea.get()
     textarea.delete(0, END)
 
     if input_text == data[question_number]["answer"]:
-        textarea.insert(0, "正解！！")
-        textarea.insert(END, "入力した答え：" + input_text)
+        textarea.insert(0, "【○正解！】")
+        textarea.insert(END, "　入力した答え：" + input_text)
     else:
-        textarea.insert(0, "ざんねん、正解は「" + data[question_number]["answer"] + "」でした！")
-        textarea.insert(END, "入力した答え：" + input_text)
+        textarea.insert(0, "【×ざんねん】正解は「" + data[question_number]["answer"] + "」でした！")
+        textarea.insert(END, "　入力した答え：" + input_text)
 
 
 def nextQuestion():
     global img, question_number, hints_now
     textarea.delete(0, END)
     hints_now = 1
+    question_number += 1
 
     if question_number < question_max:
 
@@ -48,8 +49,6 @@ def nextQuestion():
         img = Image.open("hint3.jpg")
         img = ImageTk.PhotoImage(img)
         picture_label.configure(image=img)
-
-        question_number += 1
 
     else:
         endQuiz()
@@ -66,7 +65,7 @@ with open("data.json", 'r', encoding="utf-8") as file:
 
 # 変数の作成
 question_max = len(data)
-question_number = 0
+question_number = -1
 hints_now = 0
 
 
@@ -76,38 +75,30 @@ root.title('都道府県クイズアプリ')
 root.resizable(width=False, height=False)
 root.geometry("640x640")
 
-# フレームの作成
-text_frame = ttk.Frame(root, padding=10)
-image_frame = ttk.Frame(root, padding=5, height=400)
-answer_frame = ttk.Frame(root, padding=5)
-
 # ラベルの作成
-question_label = ttk.Label(text_frame, font=("", 16), padding=10, text="問題文ラベル")
-hint1_label = ttk.Label(text_frame, font=("", 12), padding=5, text="ヒント１ラベル")
-hint2_label = ttk.Label(text_frame, font=("", 12), padding=5, text="ヒント２ラベル")
+question_label = ttk.Label(root, font=("", 16), padding=10, text="問題文ラベル")
+hint1_label = ttk.Label(root, font=("", 12), padding=5, text="ヒント１ラベル")
+hint2_label = ttk.Label(root, font=("", 12), padding=5, text="ヒント２ラベル")
 img = Image.open("hint3.jpg")
 img = ImageTk.PhotoImage(img)
-picture_label = ttk.Label(image_frame, padding=5, image=img)
+picture_label = ttk.Label(root, padding=5, image=img)
 
 # 答え入力欄の作成
 text = StringVar()
-textarea = ttk.Entry(answer_frame, font=("", 16), width=640, textvariable=text)
+textarea = ttk.Entry(root, font=("", 16), width=640, textvariable=text)
 
 # ボタンの作成
-button1 = ttk.Button(answer_frame, padding=5, text='ヒントを出す', command=lambda: getHint())
-button2 = ttk.Button(answer_frame, padding=5, text='答える！', command=lambda: setAnswer())
-button3 = ttk.Button(answer_frame, padding=5, text='スタート/次の問題', command=lambda: nextQuestion())
+button1 = ttk.Button(root, padding=5, text='ヒントを出す', command=lambda: getHint())
+button2 = ttk.Button(root, padding=5, text='答える！', command=lambda: checkAnswer())
+button3 = ttk.Button(root, padding=5, text='次の問題', command=lambda: nextQuestion())
 
 # ウィジェットの配置
-text_frame.pack()
 question_label.pack()
 hint1_label.pack()
 hint2_label.pack()
 
-image_frame.pack()
 picture_label.pack()
 
-answer_frame.pack()
 textarea.pack()
 button1.pack(side='left', padx=60, pady=10)
 button2.pack(side='left', padx=60)
