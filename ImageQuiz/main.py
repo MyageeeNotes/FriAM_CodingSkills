@@ -38,7 +38,7 @@ def nextQuestion():
     hints_now = 1
     question_number += 1
 
-    if question_number < question_max:
+    if question_number < len(data):
 
         # 問題文をセット
         question_label["text"] = "問題：" + data[question_number]["question"]
@@ -57,16 +57,6 @@ def nextQuestion():
 def endQuiz():
     textarea.delete(0, END)
     textarea.insert(0, "すべてのクイズに答えました！")
-
-
-# 外部データの読み込み
-with open("data.json", 'r', encoding="utf-8") as file:
-    data = json.load(file)
-
-# 変数の作成
-question_max = len(data)
-question_number = -1
-hints_now = 0
 
 
 # メインウィンドウの描画
@@ -100,9 +90,16 @@ hint2_label.pack()
 picture_label.pack()
 
 textarea.pack()
-button1.pack(side='left', padx=60, pady=10)
+button1.pack(side='left', padx=60)
 button2.pack(side='left', padx=60)
 button3.pack(side='left', padx=60)
+
+# 外部データの読み込み
+with open("data.json", 'r', encoding="utf-8") as file:
+    data = json.load(file)
+
+# 変数の作成
+question_number = -1
 
 # 第一問目を表示
 nextQuestion()
